@@ -1646,6 +1646,74 @@ if (@$_GET['mesaj_sil']=="ok") {
 
 
 
+if (isset($_POST['referanskaydet'])) {
+
+
+	$uploads_dir = '../../img/referans';
+	@$tmp_name = $_FILES['referans_resimyol']["tmp_name"];
+	@$name = $_FILES['referans_resimyol']["name"];
+	//resmin isminin benzersiz olması
+	$benzersizsayi1=rand(20000,32000);
+	$benzersizsayi2=rand(20000,32000);
+	$benzersizsayi3=rand(20000,32000);
+	$benzersizsayi4=rand(20000,32000);	
+	$benzersizad=$benzersizsayi1.$benzersizsayi2.$benzersizsayi3.$benzersizsayi4;
+	$refimgyol=substr($uploads_dir, 6)."/".$benzersizad.$name;
+	@move_uploaded_file($tmp_name, "$uploads_dir/$benzersizad$name");
+	
+
+
+	$kaydet=$db->prepare("INSERT INTO referans SET
+		referans_durum=:referans_durum,
+		referans_resimyol=:referans_resimyol
+		");
+	$insert=$kaydet->execute(array(
+		'referans_durum' => $_POST['referans_durum'],
+		'referans_resimyol' => $refimgyol
+		));
+
+	if ($insert) {
+
+		Header("Location:../production/referans.php?durum=ok");
+
+	} else {
+
+		Header("Location:../production/referans.php?durum=no");
+	}
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

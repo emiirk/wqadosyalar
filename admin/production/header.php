@@ -124,7 +124,8 @@ if ($say==0) {
                 <li><a href="egitim-kategorileri.php"><i class="fa fa-university"></i> Eğitim Kategorileri</a>
                 <li><a href="sss.php"><i class="fa fa-question-circle"></i> S.S.S</a>
                 <li><a href="mesajlar.php"><i class="fa fa-envelope"></i> Mesajlar</a>
-
+                <li><a href="referans.php"><i class="fa fa-envelope"></i> Referanslar</a>
+                <li><a href="blog.php"><i class="fa fa-envelope"></i> Blog</a>
 
 
 

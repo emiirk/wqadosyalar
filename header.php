@@ -99,6 +99,7 @@ $ayarcek=$ayarsor->fetch(PDO::FETCH_ASSOC);
             </ul>
           </li>
           <li><a href="egitim.php">EĞİTİM</a></li>
+          <li><a href="blog.php">BLOG</a></li>
           <li><a href="sss.php">S.S.S</a></li>
           <li><a href="iletisim.php">İLETİŞİM</a></li>
           
